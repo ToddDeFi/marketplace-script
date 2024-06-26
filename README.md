@@ -2,7 +2,7 @@ For start:
 
 npm install
 
-node index.js
+node main.js
 
 
 SparkSwap:

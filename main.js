@@ -1,7 +1,7 @@
 const axios = require('axios');
 const ethers = require('ethers');
 
-const walletAddress = '0x451bEFfB6a43fEC308276c24c2a279b31616cB54';
+const walletAddress = '0xaFe186232442a29D829bd38c6BEA35FBa6AfBaa0';
 const address404 = '0xDc2e74740279dD1ed27727eddf80aF7CcC3D6a72';
 const addressLocker = '0x22FC303b11c6638C5967B3861c5a2C35449dF26e';
 
@@ -186,6 +186,8 @@ const main = async () => {
                     console.log('NFT IDs do not match between contract and backend');
                 }
             }
+        } else {
+            console.log(`Wallet ${walletAddress} doesn't have NFTs`);
         }
     } catch (error) {
         console.error('Error:', error);
