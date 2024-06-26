@@ -126,13 +126,11 @@ const getContractData = async () => {
     const contract404 = new ethers.Contract(address404, abi404, provider);
     const lockerContract = new ethers.Contract(addressLocker, abiLocker, provider);
 
-    // Получаем количество NFT у кошелька и locker
     const [nftsCount, lockerNFTsCount] = await Promise.all([
         contract404.ownedCount(walletAddress),
         contract404.ownedCount(addressLocker)
     ]);
 
-    // Получаем все идентификаторы NFT у кошелька и locker
     const getNFTIds = async (contract, address, count) => {
         const promises = [];
         for (let i = 0; i < count; i++) {
